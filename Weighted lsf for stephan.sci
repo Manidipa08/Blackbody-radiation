@@ -1,0 +1,16 @@
+XY=xxx.*yyy'
+XX=xxx.^2
+m=length(xxx)
+s_x=sum(xxx)
+s_y=sum(yyy)
+s_xy=sum(XY)
+s_xx=sum(XX)
+s_w=sum(W)
+s_wx=sum(W.*xxx)
+s_wy=sum(W.*yyy')
+s_wxx=sum(W.*xxx.*xxx)
+s_wxy=sum(W.*xxx.*yyy')
+a0=((s_wy.*s_wxx)-(s_wxy.*s_wx))/((s_w.*s_wxx)-(s_wx)^2)//a0-intercept
+a1=((s_w.*s_wxy)-(s_wx.*s_wy))/((s_w.*s_wxx)-(s_wx)^2)///a1-slope
+[a b]=reglin(xxx,yyy')
+fx=a0+a1*xxx
